@@ -21,9 +21,9 @@ npm run build         # build de produção
 3. Deploy. O `vercel.json` registra o cron `/api/cron/refresh-urls`.
 
 ### Cron
-- **Plano Hobby**: crons rodam no máximo **1×/dia**, mesmo com `schedule` de hora em hora.
-- **Plano Pro**: roda de hora em hora (como está no `vercel.json`).
-- **Sem upgrade**: use GitHub Actions (grátis, de hora em hora):
+- O `vercel.json` está com `0 8 * * *` (1×/dia, 08:00 UTC) — o máximo que o **plano Hobby** permite. Um `schedule` mais frequente faz o deploy falhar no Hobby.
+- **Plano Pro**: pode aumentar a frequência (ex: `0 * * * *` de hora em hora).
+- **Quer mais frequente sem pagar**: use GitHub Actions (grátis):
 
 ```yaml
 # .github/workflows/refresh.yml
