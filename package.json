@@ -1,22 +1,52 @@
 {
-  "name": "tcc",
+  "name": "chatbot",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "format": "prettier --write \"src/**/*.{js,jsx}\" \"scripts/**/*.mjs\" \"test/**/*.js\"",
+    "format:check": "prettier --check \"src/**/*.{js,jsx}\" \"scripts/**/*.mjs\" \"test/**/*.js\"",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "capacity": "node --env-file=.env.local scripts/model-capacity-test.mjs",
+    "eval": "node --env-file=.env.local scripts/eval-accuracy.mjs",
+    "reindex": "node --env-file=.env.local scripts/reindex.mjs",
+    "dedupe": "node --env-file=.env.local scripts/dedupe.mjs",
+    "setup-vector-index": "node --env-file=.env.local scripts/setup-vector-index.mjs"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "overrides": {
+    "jose": "4.15.9"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@google/generative-ai": "^0.24.1",
+    "@mui/icons-material": "^7.3.11",
+    "@mui/material": "^7.3.11",
+    "cheerio": "^1.2.0",
+    "firebase": "^12.15.0",
+    "firebase-admin": "^14.1.0",
     "next": "16.1.6",
+    "pdf-parse": "^1.1.1",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "react-markdown": "^10.1.0",
+    "rehype-sanitize": "^6.0.0",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
-    "tailwindcss": "^4"
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.9.6",
+    "tailwindcss": "^4",
+    "vitest": "^5.0.0"
   }
 }

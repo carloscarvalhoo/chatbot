@@ -1,0 +1,435 @@
+{
+  "meta": {
+    "descricao": "Perguntas frequentes redigidas a partir do conteudo indexado do site do IFPR (foco em Processo Seletivo 2027 e Campus Ivaipora). Cada item tem resposta de referencia conferida na fonte, palavras-chave obrigatorias e a URL da fonte esperada na recuperacao.",
+    "atualizadoEm": "2026-09-10",
+    "totalPerguntas": 42
+  },
+  "perguntas": [
+    {
+      "id": "ps-grad-01",
+      "tema": "processo-seletivo",
+      "pergunta": "Qual e o periodo de inscricao para os cursos de graduacao do IFPR?",
+      "respostaReferencia": "As inscricoes para a graduacao ficam abertas de 15 de junho a 24 de agosto de 2026.",
+      "deveConter": ["15 de junho", "24 de agosto"],
+      "fonteEsperada": "perguntas-frequentes-graduacao"
+    },
+    {
+      "id": "ps-grad-02",
+      "tema": "processo-seletivo",
+      "pergunta": "Como faco a inscricao no processo seletivo de graduacao?",
+      "respostaReferencia": "A inscricao e feita exclusivamente online, pelo Portal do Candidato do IFPR, usando a conta pessoal gov.br.",
+      "deveConter": [],
+      "deveConterQualquer": ["online", "internet", "gov.br", "portal do candidato"],
+      "fonteEsperada": "perguntas-frequentes-graduacao"
+    },
+    {
+      "id": "ps-grad-03",
+      "tema": "taxa-inscricao",
+      "pergunta": "Quanto custa a taxa de inscricao para os cursos de graduacao?",
+      "respostaReferencia": "Para Licenciatura a inscricao e gratuita. Para Bacharelado e Tecnologia a taxa e de R$ 55,00.",
+      "deveConter": ["55"],
+      "deveConterQualquer": ["Licenciatura", "licenciatura", "gratuita", "gratuito"],
+      "fonteEsperada": "perguntas-frequentes-graduacao"
+    },
+    {
+      "id": "ps-grad-04",
+      "tema": "processo-seletivo",
+      "pergunta": "Quem pode se inscrever no processo seletivo de graduacao do IFPR?",
+      "respostaReferencia": "Qualquer pessoa que tenha concluido o Ensino Medio ate a data da matricula.",
+      "deveConter": ["Ensino Medio"],
+      "deveConterQualquer": ["matricula", "matrícula"],
+      "fonteEsperada": "perguntas-frequentes-graduacao"
+    },
+    {
+      "id": "ps-grad-05",
+      "tema": "processo-seletivo",
+      "pergunta": "Como funciona a selecao para os cursos de graduacao?",
+      "respostaReferencia": "Sao duas etapas: uma Prova de Redacao Online eliminatoria e a Analise de Historico Escolar classificatoria, com base nas notas de Lingua Portuguesa e Matematica do 1o e 2o anos do Ensino Medio.",
+      "deveConter": ["Reda"],
+      "deveConterQualquer": ["Historico Escolar", "Histórico Escolar", "historico", "histórico"],
+      "fonteEsperada": "perguntas-frequentes-graduacao"
+    },
+    {
+      "id": "ps-grad-06",
+      "tema": "processo-seletivo",
+      "pergunta": "Quanto tempo tenho para fazer a Prova de Redacao Online da graduacao?",
+      "respostaReferencia": "Voce recebe o link por e-mail e tem 1 hora e 30 minutos para concluir a redacao.",
+      "deveConter": [],
+      "deveConterQualquer": ["1 hora e 30", "1h30", "90 minutos", "hora e meia"],
+      "fonteEsperada": "perguntas-frequentes-graduacao"
+    },
+    {
+      "id": "ps-grad-07",
+      "tema": "cotas",
+      "pergunta": "Qual o percentual de vagas reservadas para cotas no IFPR?",
+      "respostaReferencia": "O IFPR reserva 60% das vagas para quem cursou todo o Ensino Medio em escola publica.",
+      "deveConter": ["60%"],
+      "deveConterQualquer": ["escola publica", "escola pública", "publica", "pública"],
+      "fonteEsperada": "perguntas-frequentes-graduacao"
+    },
+    {
+      "id": "ps-grad-08",
+      "tema": "cotas",
+      "pergunta": "Quais sao as subcotas dentro das vagas de escola publica?",
+      "respostaReferencia": "Ha subcotas por renda familiar per capita de ate 1 salario minimo, para autodeclarados pretos, pardos ou indigenas (PPI), para quilombolas e para pessoas com deficiencia (PCD).",
+      "deveConter": ["renda"],
+      "deveConterQualquer": ["PPI", "pretos", "quilombola", "PCD", "deficiencia", "deficiência"],
+      "fonteEsperada": "perguntas-frequentes-graduacao"
+    },
+    {
+      "id": "ps-int-01",
+      "tema": "processo-seletivo",
+      "pergunta": "O que sao os Cursos Tecnicos Integrados ao Ensino Medio do IFPR?",
+      "respostaReferencia": "Sao cursos que unem a formacao do Ensino Medio com uma habilitacao tecnica, dando dupla certificacao: diploma de Ensino Medio e diploma de Tecnico.",
+      "deveConter": ["Ensino Medio"],
+      "deveConterQualquer": [
+        "dupla certificacao",
+        "dupla certificação",
+        "diploma",
+        "tecnico",
+        "técnico"
+      ],
+      "fonteEsperada": "perguntas-frequentes-sobre-o-processo-seletivo-ifpr-2026-cursos-tecnicos-integrados"
+    },
+    {
+      "id": "ps-int-02",
+      "tema": "processo-seletivo",
+      "pergunta": "Quais os pre-requisitos para se inscrever nos cursos tecnicos integrados?",
+      "respostaReferencia": "Ter concluido ou estar concluindo o 9o ano do Ensino Fundamental, com o Ensino Fundamental concluido ate o inicio do ano letivo de 2027. Nao sao aceitos candidatos com 18 anos completos ou mais.",
+      "deveConter": ["9"],
+      "deveConterQualquer": ["Ensino Fundamental", "ensino fundamental", "18 anos"],
+      "fonteEsperada": "perguntas-frequentes-sobre-o-processo-seletivo-ifpr-2026-cursos-tecnicos-integrados"
+    },
+    {
+      "id": "ps-int-03",
+      "tema": "processo-seletivo",
+      "pergunta": "Tem prova no processo seletivo dos cursos tecnicos integrados?",
+      "respostaReferencia": "Nao ha prova de conhecimentos. A classificacao usa as medias finais de Lingua Portuguesa e Matematica do 7o e 8o ano do Ensino Fundamental.",
+      "deveConter": ["Matematica"],
+      "deveConterQualquer": [
+        "nao ha prova",
+        "não há prova",
+        "sem prova",
+        "nao e realizada por meio de prova",
+        "não é realizada por meio de prova",
+        "Lingua Portuguesa",
+        "Língua Portuguesa"
+      ],
+      "fonteEsperada": "perguntas-frequentes-sobre-o-processo-seletivo-ifpr-2026-cursos-tecnicos-integrados"
+    },
+    {
+      "id": "ps-int-04",
+      "tema": "taxa-inscricao",
+      "pergunta": "Qual o valor da taxa de inscricao dos cursos tecnicos integrados 2027?",
+      "respostaReferencia": "A taxa de inscricao e de R$ 35,00.",
+      "deveConter": ["35"],
+      "fonteEsperada": "processo-seletivo/processo-seletivo-2027/integrados/inscricoes"
+    },
+    {
+      "id": "ps-int-05",
+      "tema": "calendario",
+      "pergunta": "Ate quando posso pagar o boleto da taxa de inscricao dos cursos integrados?",
+      "respostaReferencia": "O pagamento do boleto deve ser feito ate 09 de setembro de 2026.",
+      "deveConter": ["09 de setembro de 2026"],
+      "fonteEsperada": "processo-seletivo/processo-seletivo-2027/integrados"
+    },
+    {
+      "id": "ps-int-06",
+      "tema": "calendario",
+      "pergunta": "Ate quando ficam abertas as inscricoes dos cursos tecnicos integrados 2027?",
+      "respostaReferencia": "As inscricoes ficam abertas ate 07 de setembro de 2026.",
+      "deveConter": ["07 de setembro de 2026"],
+      "fonteEsperada": "processo-seletivo/processo-seletivo-2027/integrados"
+    },
+    {
+      "id": "ps-int-07",
+      "tema": "processo-seletivo",
+      "pergunta": "Como o candidato menor de idade cria a conta gov.br para se inscrever?",
+      "respostaReferencia": "Candidatos menores de idade precisam da ajuda do Responsavel Legal para criar a conta gov.br.",
+      "deveConter": ["Responsavel Legal"],
+      "deveConterQualquer": ["gov.br", "menor"],
+      "fonteEsperada": "processo-seletivo/processo-seletivo-2027/integrados/inscricoes"
+    },
+    {
+      "id": "isencao-01",
+      "tema": "taxa-inscricao",
+      "pergunta": "Quais os criterios para conseguir isencao da taxa de inscricao?",
+      "respostaReferencia": "Estar inscrito no Cadastro Unico (CadUnico) com NIS, ou comprovar renda familiar bruta per capita de ate 1 salario minimo e ter cursado todo o Ensino Fundamental em escola publica ou como bolsista integral.",
+      "deveConter": [],
+      "deveConterQualquer": [
+        "CadUnico",
+        "CadÚnico",
+        "Cadastro Unico",
+        "Cadastro Único",
+        "NIS",
+        "salario minimo",
+        "salário mínimo"
+      ],
+      "fonteEsperada": "taxa-de-inscricao"
+    },
+    {
+      "id": "isencao-02",
+      "tema": "calendario",
+      "pergunta": "Ate quando posso solicitar a isencao da taxa de inscricao dos cursos integrados?",
+      "respostaReferencia": "A isencao pode ser solicitada ate 10 de agosto de 2026.",
+      "deveConter": ["10 de agosto de 2026"],
+      "fonteEsperada": "taxa-de-inscricao"
+    },
+    {
+      "id": "isencao-03",
+      "tema": "taxa-inscricao",
+      "pergunta": "Qual o valor de renda per capita que da direito a isencao da taxa?",
+      "respostaReferencia": "Renda bruta familiar per capita de ate 1 salario minimo nacional, cerca de R$ 1.621,00.",
+      "deveConter": [],
+      "deveConterQualquer": [
+        "1.621",
+        "1 salario minimo",
+        "um salario minimo",
+        "1 salário mínimo",
+        "um salário mínimo"
+      ],
+      "fonteEsperada": "taxa-de-inscricao"
+    },
+    {
+      "id": "cal-ps-01",
+      "tema": "calendario",
+      "pergunta": "Quando sai o resultado final do Processo Seletivo 2027 dos cursos integrados?",
+      "respostaReferencia": "O Resultado Final do Processo Seletivo e publicado em 16/11/2026.",
+      "deveConter": [],
+      "deveConterQualquer": ["16/11/2026", "16 de novembro de 2026", "16 de novembro"],
+      "fonteEsperada": "processo-seletivo/processo-seletivo-2027/integrados/calendario"
+    },
+    {
+      "id": "cal-ps-02",
+      "tema": "calendario",
+      "pergunta": "Quando foi publicado o edital preliminar do Processo Seletivo 2027 dos integrados?",
+      "respostaReferencia": "O edital preliminar foi publicado em 08/06/2026.",
+      "deveConter": [],
+      "deveConterQualquer": ["08/06/2026", "8 de junho de 2026", "08 de junho de 2026"],
+      "fonteEsperada": "processo-seletivo/processo-seletivo-2027/integrados/calendario"
+    },
+    {
+      "id": "cursos-01",
+      "tema": "cursos",
+      "pergunta": "Que tipos de curso de graduacao o IFPR oferece?",
+      "respostaReferencia": "O IFPR oferece cursos de Tecnologia (tecnologos), Licenciaturas e Bacharelados.",
+      "deveConter": ["Licenciatura", "Bacharelado"],
+      "deveConterQualquer": ["Tecnologia", "tecnologo", "tecnólogo"],
+      "fonteEsperada": "cursos/graduacao"
+    },
+    {
+      "id": "cursos-02",
+      "tema": "cursos",
+      "pergunta": "Quanto tempo dura, em media, um curso de bacharelado no IFPR?",
+      "respostaReferencia": "Os bacharelados tem duracao minima de quatro anos.",
+      "deveConter": [],
+      "deveConterQualquer": ["quatro anos", "4 anos"],
+      "fonteEsperada": "cursos/graduacao"
+    },
+    {
+      "id": "cursos-03",
+      "tema": "cursos",
+      "pergunta": "Qual a duracao media dos cursos tecnologicos do IFPR?",
+      "respostaReferencia": "Os cursos tecnologicos tem duracao media de dois anos e meio.",
+      "deveConter": [],
+      "deveConterQualquer": ["dois anos e meio", "2 anos e meio", "2,5 anos"],
+      "fonteEsperada": "cursos/graduacao"
+    },
+    {
+      "id": "cursos-04",
+      "tema": "cursos",
+      "pergunta": "Quanto tempo dura uma licenciatura no IFPR?",
+      "respostaReferencia": "As licenciaturas duram no minimo tres anos.",
+      "deveConter": [],
+      "deveConterQualquer": ["tres anos", "três anos", "3 anos"],
+      "fonteEsperada": "cursos/graduacao"
+    },
+    {
+      "id": "cursos-05",
+      "tema": "cursos",
+      "pergunta": "O IFPR oferece curso de Ciencia da Computacao?",
+      "respostaReferencia": "Sim, Ciencia da Computacao e um dos bacharelados oferecidos pelo IFPR.",
+      "deveConter": [],
+      "deveConterQualquer": ["sim", "Ciencia da Computacao", "Ciência da Computação"],
+      "fonteEsperada": "cursos/graduacao"
+    },
+    {
+      "id": "cursos-06",
+      "tema": "cursos",
+      "pergunta": "Os cursos de graduacao do IFPR sao presenciais ou a distancia?",
+      "respostaReferencia": "Todos os cursos de graduacao sao presenciais, conforme o projeto pedagogico de cada curso.",
+      "deveConter": ["presenciais"],
+      "fonteEsperada": "perguntas-frequentes-graduacao"
+    },
+    {
+      "id": "inst-01",
+      "tema": "institucional",
+      "pergunta": "Quando o IFPR foi criado?",
+      "respostaReferencia": "O IFPR foi criado em dezembro de 2008, pela Lei 11.892, que instituiu a Rede Federal de Educacao Profissional e Tecnologica.",
+      "deveConter": ["2008"],
+      "deveConterQualquer": ["11.892", "Lei 11892"],
+      "fonteEsperada": "o-instituto/sobre-o-ifpr"
+    },
+    {
+      "id": "inst-02",
+      "tema": "institucional",
+      "pergunta": "A qual ministerio o IFPR e vinculado?",
+      "respostaReferencia": "O IFPR e vinculado ao Ministerio da Educacao (MEC), por meio da Secretaria de Educacao Profissional e Tecnologica (Setec).",
+      "deveConter": [],
+      "deveConterQualquer": ["Ministerio da Educacao", "Ministério da Educação", "MEC"],
+      "fonteEsperada": "o-instituto/sobre-o-ifpr"
+    },
+    {
+      "id": "inst-03",
+      "tema": "institucional",
+      "pergunta": "De qual instituicao o IFPR se originou?",
+      "respostaReferencia": "O IFPR surgiu da transformacao da Escola Tecnica da Universidade Federal do Parana (ET-UFPR).",
+      "deveConter": [],
+      "deveConterQualquer": [
+        "Escola Tecnica da Universidade Federal do Parana",
+        "Escola Técnica da Universidade Federal do Paraná",
+        "ET-UFPR"
+      ],
+      "fonteEsperada": "o-instituto"
+    },
+    {
+      "id": "inst-04",
+      "tema": "campi",
+      "pergunta": "Quantos campi o IFPR tem no Parana?",
+      "respostaReferencia": "O IFPR possui 25 campi no estado do Parana.",
+      "deveConter": ["25"],
+      "fonteEsperada": "contatos"
+    },
+    {
+      "id": "inst-05",
+      "tema": "institucional",
+      "pergunta": "O IFPR cobra mensalidade dos alunos?",
+      "respostaReferencia": "Nao. O IFPR e uma instituicao publica federal e a oferta de ensino e gratuita.",
+      "deveConter": [],
+      "deveConterQualquer": [
+        "gratuit",
+        "nao cobra",
+        "não cobra",
+        "sem mensalidade",
+        "publica",
+        "pública"
+      ],
+      "fonteEsperada": "o-instituto/sobre-o-ifpr"
+    },
+    {
+      "id": "vida-01",
+      "tema": "assistencia-estudantil",
+      "pergunta": "O IFPR tem programas de assistencia estudantil?",
+      "respostaReferencia": "Sim. A Assistencia Estudantil do IFPR mantem editais proprios e acoes como PNAE, Monitoria, Estudante Atleta, Pe de Meia e NAPNE, voltados a permanencia e ao exito dos estudantes.",
+      "deveConter": [],
+      "deveConterQualquer": [
+        "edital",
+        "PNAE",
+        "monitoria",
+        "Pe de Meia",
+        "Pé de Meia",
+        "assistencia estudantil",
+        "assistência estudantil"
+      ],
+      "fonteEsperada": "assistencia-estudantil"
+    },
+    {
+      "id": "vida-02",
+      "tema": "carteirinha",
+      "pergunta": "Como emito a carteirinha estudantil no Campus Ivaiporã?",
+      "respostaReferencia": "Baixe e preencha o modelo de carteirinha, use nome em letras maiusculas, cole uma foto 3x4, imprima colorido, recorte e dobre, e leve a SEPAE para conferencia e assinatura do Diretor.",
+      "deveConter": [],
+      "deveConterQualquer": ["modelo", "SEPAE", "3x4", "3×4", "foto"],
+      "fonteEsperada": "carteirinha-estudantil"
+    },
+    {
+      "id": "vida-03",
+      "tema": "transferencia",
+      "pergunta": "Como faco para ingressar no IFPR por transferencia?",
+      "respostaReferencia": "O ingresso por transferencia interna e externa acontece por meio de edital de processo seletivo simplificado publicado pelo campus.",
+      "deveConter": ["edital"],
+      "deveConterQualquer": ["transferencia", "transferência", "processo seletivo simplificado"],
+      "fonteEsperada": "transferencia-interna-e-externa"
+    },
+    {
+      "id": "vida-04",
+      "tema": "abandono-readmissao",
+      "pergunta": "O que caracteriza abandono de curso no IFPR?",
+      "respostaReferencia": "Abandono ocorre quando o estudante nao faz a matricula ou o trancamento no prazo do calendario academico. Nos cursos superiores, tambem se caracteriza pela ausencia por mais de 30 dias consecutivos sem justificativa.",
+      "deveConter": [],
+      "deveConterQualquer": [
+        "matricula",
+        "matrícula",
+        "trancamento",
+        "30 dias",
+        "calendario academico",
+        "calendário acadêmico"
+      ],
+      "fonteEsperada": "abandono-de-curso-e-readmissao"
+    },
+    {
+      "id": "vida-05",
+      "tema": "abandono-readmissao",
+      "pergunta": "Como solicito readmissao ao curso depois de um abandono?",
+      "respostaReferencia": "A readmissao e solicitada por protocolo dirigido a Direcao-Geral do Campus, com uma carta formal de pedido endereçada ao Diretor-Geral. O pedido e de fluxo continuo.",
+      "deveConter": ["protocolo"],
+      "deveConterQualquer": ["Direcao-Geral", "Direção-Geral", "carta", "Diretor-Geral"],
+      "fonteEsperada": "abandono-de-curso-e-readmissao"
+    },
+    {
+      "id": "vida-06",
+      "tema": "estagio",
+      "pergunta": "Quem cuida dos estagios no Campus Ivaiporã?",
+      "respostaReferencia": "A SERC, Secao de Estagios e Relacoes Comunitarias, e responsavel pelos estagios. Contato: serc.ivaipora@ifpr.edu.br.",
+      "deveConter": ["SERC"],
+      "deveConterQualquer": ["serc.ivaipora@ifpr.edu.br", "Secao de Estagios", "Seção de Estágios"],
+      "fonteEsperada": "secao-de-estagios"
+    },
+    {
+      "id": "vida-07",
+      "tema": "biblioteca",
+      "pergunta": "Qual o e-mail da biblioteca do Campus Ivaiporã?",
+      "respostaReferencia": "O e-mail da Biblioteca do Campus Ivaiporã e biblioteca.ivaipora@ifpr.edu.br e o telefone (043) 3126-9407.",
+      "deveConter": ["biblioteca.ivaipora@ifpr.edu.br"],
+      "fonteEsperada": "ivaipora/biblioteca"
+    },
+    {
+      "id": "vida-08",
+      "tema": "secretaria",
+      "pergunta": "Qual o telefone da Secretaria Academica do Campus Ivaiporã?",
+      "respostaReferencia": "O telefone da Secretaria Academica do Campus Ivaiporã e (43) 3126-9400.",
+      "deveConter": ["3126-9400"],
+      "fonteEsperada": "ivaipora/secretaria-academica"
+    },
+    {
+      "id": "vida-09",
+      "tema": "calendario",
+      "pergunta": "Existe calendario academico de 2026 para os cursos do Campus Ivaiporã?",
+      "respostaReferencia": "Sim. Ha o Calendario Academico 2026 para Cursos Tecnicos e Graduacao do Campus Ivaiporã.",
+      "deveConter": ["2026"],
+      "deveConterQualquer": [
+        "calendario academico",
+        "calendário acadêmico",
+        "Calendario Academico"
+      ],
+      "fonteEsperada": "ivaipora/estudantes/calendario-academico"
+    },
+    {
+      "id": "contato-01",
+      "tema": "contato",
+      "pergunta": "Com quem falo em caso de duvidas sobre o Processo Seletivo?",
+      "respostaReferencia": "Duvidas sobre o Processo Seletivo devem ser enviadas para comps@ifpr.edu.br.",
+      "deveConter": ["comps@ifpr.edu.br"],
+      "fonteEsperada": "contatos"
+    },
+    {
+      "id": "contato-02",
+      "tema": "institucional",
+      "pergunta": "Onde fica a Reitoria do IFPR?",
+      "respostaReferencia": "A Reitoria do IFPR fica em Curitiba, distribuida em tres enderecos: Sede Cajuru, Sede Asa e Sede Guabirotuba.",
+      "deveConter": ["Curitiba"],
+      "deveConterQualquer": ["Cajuru", "Guabirotuba", "Reitoria"],
+      "fonteEsperada": "contatos"
+    }
+  ]
+}

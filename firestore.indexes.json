@@ -1,0 +1,20 @@
+{
+  "indexes": [],
+  "fieldOverrides": [
+    {
+      "collectionGroup": "chunks",
+      "fieldPath": "embedding",
+      "indexes": [
+        {
+          "queryScope": "COLLECTION_GROUP",
+          "vectorConfig": { "dimension": 768, "flat": {} }
+        }
+      ]
+    },
+    {
+      "collectionGroup": "rawText",
+      "fieldPath": "text",
+      "indexes": []
+    }
+  ]
+}
