@@ -17,8 +17,11 @@ import { logger } from "@/server/utils/logger";
 const KEYWORD_FIELDS = ["text", "fileId", "sourceFileName", "sourceUrl", "sourceUpdatedAt"];
 
 // Thresholds configuráveis por ambiente — recalibrar após reindexar (ver
-// scripts/tune-search se existir, ou o comparador do painel).
-const DEFAULT_TOP_K = Number(process.env.SEARCH_TOP_K) || 8;
+// o comparador do painel ou `npm run eval`).
+// 12 (e não 8): páginas de tabela/lista (calendário, lista de cursos) têm a
+// resposta espalhada em vários chunks vizinhos; um topK maior aumenta a chance
+// de o chunk certo entrar. Custo: ~4 leituras a mais no Firestore por pergunta.
+const DEFAULT_TOP_K = Number(process.env.SEARCH_TOP_K) || 12;
 const DEFAULT_MIN_SIMILARITY = Number(process.env.SEARCH_MIN_SIMILARITY) || 0.4;
 const DEFAULT_MIN_KEYWORD_SCORE = Number(process.env.SEARCH_MIN_KEYWORD_SCORE) || 2;
 // Similaridade mínima para CITAR uma fonte ao usuário. É mais alta que o

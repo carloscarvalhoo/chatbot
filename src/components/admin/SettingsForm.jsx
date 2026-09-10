@@ -15,12 +15,14 @@ export default function SettingsForm() {
     footerNote: "",
     supportUrl: "",
     supportLabel: "",
+    supportContacts: [],
     suggestedQuestions: [],
     aiChain: [],
   });
 
   const [newQuestion, setNewQuestion] = useState("");
   const [newSpec, setNewSpec] = useState("");
+  const [newContact, setNewContact] = useState({ label: "", value: "" });
   const [dragIndex, setDragIndex] = useState(null);
   const [dragOverIndex, setDragOverIndex] = useState(null);
 
@@ -83,6 +85,21 @@ export default function SettingsForm() {
     if (form.aiChain.some((item) => item.spec === spec)) return;
     handleChange("aiChain", [...form.aiChain, { spec, enabled: true }]);
     setNewSpec("");
+  }
+
+  function addContact() {
+    const label = newContact.label.trim();
+    const value = newContact.value.trim();
+    if (!label || !value || (form.supportContacts || []).length >= 8) return;
+    handleChange("supportContacts", [...(form.supportContacts || []), { label, value }]);
+    setNewContact({ label: "", value: "" });
+  }
+
+  function removeContact(index) {
+    handleChange(
+      "supportContacts",
+      (form.supportContacts || []).filter((_, i) => i !== index),
+    );
   }
 
   function handleChange(field, value) {
@@ -175,8 +192,61 @@ export default function SettingsForm() {
       </Field>
 
       <Field
-        label="Link de suporte"
-        hint="Mostrado na 'fila de espera' quando os limites de IA estouram."
+        label="Contatos oficiais"
+        hint={`Mostrados quando o LUMI não resolve (fila de espera). Telefone, e-mail ou link. Máximo 8. (${(form.supportContacts || []).length}/8)`}
+      >
+        <div className="space-y-2">
+          {(form.supportContacts || []).map((contact, i) => (
+            <div key={i} className="flex items-center gap-2">
+              <span className="glass-subtle flex-1 rounded-xl px-4 py-2 text-sm text-zinc-300">
+                <span className="text-zinc-500">{contact.label}:</span> {contact.value}
+              </span>
+              <button
+                type="button"
+                onClick={() => removeContact(i)}
+                aria-label={`Remover ${contact.label}`}
+                className="text-zinc-600 transition hover:text-red-400"
+              >
+                <DeleteOutlineIcon fontSize="small" />
+              </button>
+            </div>
+          ))}
+
+          {(form.supportContacts || []).length < 8 && (
+            <div className="flex flex-col gap-2 sm:flex-row">
+              <input
+                type="text"
+                value={newContact.label}
+                onChange={(e) => setNewContact((c) => ({ ...c, label: e.target.value }))}
+                placeholder="Setor (ex: Secretaria Acadêmica)"
+                maxLength={60}
+                className="input-field sm:flex-1"
+              />
+              <input
+                type="text"
+                value={newContact.value}
+                onChange={(e) => setNewContact((c) => ({ ...c, value: e.target.value }))}
+                onKeyDown={(e) => e.key === "Enter" && (e.preventDefault(), addContact())}
+                placeholder="Telefone, e-mail ou link"
+                maxLength={200}
+                className="input-field sm:flex-1"
+              />
+              <button
+                type="button"
+                onClick={addContact}
+                disabled={!newContact.label.trim() || !newContact.value.trim()}
+                className="glass glass-hover flex items-center justify-center gap-1 rounded-xl px-3 py-2 text-sm text-zinc-300 transition disabled:opacity-40"
+              >
+                <AddIcon fontSize="small" />
+              </button>
+            </div>
+          )}
+        </div>
+      </Field>
+
+      <Field
+        label="Link de suporte (fallback)"
+        hint="Usado só se não houver contatos oficiais acima."
       >
         <input
           type="url"
@@ -184,17 +254,6 @@ export default function SettingsForm() {
           onChange={(e) => handleChange("supportUrl", e.target.value)}
           maxLength={500}
           placeholder="https://ifpr.edu.br/ivaipora/fale-conosco/"
-          className="input-field"
-        />
-      </Field>
-
-      <Field label="Texto do botão de suporte" hint="Ex: Falar com a secretaria.">
-        <input
-          type="text"
-          value={form.supportLabel}
-          onChange={(e) => handleChange("supportLabel", e.target.value)}
-          maxLength={60}
-          placeholder="Falar com o setor responsável"
           className="input-field"
         />
       </Field>

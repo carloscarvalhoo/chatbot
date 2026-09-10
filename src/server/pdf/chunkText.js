@@ -17,10 +17,11 @@ export function normalizeText(text) {
     .trim();
 }
 
-// Divide em sentenças para não cortar no meio de uma frase.
+// Divide em unidades pequenas para agrupar sem cortar no meio: quebra de linha
+// (mantém linhas de tabela / itens de lista inteiros) OU fim de frase.
 function splitIntoSentences(text) {
   return text
-    .split(/(?<=[.!?])\s+/)
+    .split(/\n+|(?<=[.!?])\s+/)
     .map((s) => s.trim())
     .filter(Boolean);
 }

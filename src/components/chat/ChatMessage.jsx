@@ -5,7 +5,14 @@ import RatingButtons from "@/components/chat/RatingButtons";
 import MessageMeta from "@/components/chat/MessageMeta";
 import QueueNotice from "@/components/chat/QueueNotice";
 
-export default function ChatMessage({ message, onRate, onRetry, supportUrl, supportLabel }) {
+export default function ChatMessage({
+  message,
+  onRate,
+  onRetry,
+  supportUrl,
+  supportLabel,
+  supportContacts,
+}) {
   const isUser = message.role === "user";
 
   if (message.isQueued) {
@@ -17,6 +24,7 @@ export default function ChatMessage({ message, onRate, onRetry, supportUrl, supp
           reason={message.queuedReason}
           supportUrl={supportUrl}
           supportLabel={supportLabel}
+          supportContacts={supportContacts}
           onRetry={onRetry}
         />
       </div>

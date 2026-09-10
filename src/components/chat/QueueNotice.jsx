@@ -11,6 +11,19 @@ function format(ms) {
   return h > 0 ? `${h}:${pad(m)}:${pad(s)}` : `${m}:${pad(s)}`;
 }
 
+/** Detecta se o contato é telefone, e-mail ou link e devolve o href certo. */
+function contactLink(value) {
+  const v = String(value || "").trim();
+  if (/^https?:\/\//i.test(v)) return { href: v, external: true, icon: "🔗" };
+  if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) return { href: `mailto:${v}`, icon: "✉️" };
+  const digits = v.replace(/[^\d]/g, "");
+  if (digits.length >= 8) {
+    const tel = digits.length <= 11 ? `+55${digits}` : `+${digits}`;
+    return { href: `tel:${tel}`, icon: "📞" };
+  }
+  return { href: null, icon: "•" };
+}
+
 /**
  * "Fila de espera" mostrada quando os limites gratuitos de IA estouraram.
  * Conta o tempo até a liberação e oferece o canal humano como alternativa.
@@ -21,8 +34,10 @@ export default function QueueNotice({
   reason,
   supportUrl,
   supportLabel,
+  supportContacts = [],
   onRetry,
 }) {
+  const contacts = Array.isArray(supportContacts) ? supportContacts.filter((c) => c?.value) : [];
   const [remaining, setRemaining] = useState(initialMs);
 
   useEffect(() => {
@@ -75,7 +90,7 @@ export default function QueueNotice({
           </button>
         )}
 
-        {supportUrl && (
+        {contacts.length === 0 && supportUrl && (
           <a
             href={supportUrl}
             target="_blank"
@@ -87,7 +102,37 @@ export default function QueueNotice({
         )}
       </div>
 
-      {!ready && (
+      {contacts.length > 0 && (
+        <div className="mt-4 border-t border-white/10 pt-3">
+          <p className="text-xs font-medium text-zinc-400">Contatos oficiais</p>
+          <ul className="mt-2 space-y-1.5">
+            {contacts.map((contact, i) => {
+              const link = contactLink(contact.value);
+              return (
+                <li key={i} className="flex items-center gap-2 text-sm">
+                  <span aria-hidden="true" className="text-xs">
+                    {link.icon}
+                  </span>
+                  <span className="text-zinc-500">{contact.label}:</span>
+                  {link.href ? (
+                    <a
+                      href={link.href}
+                      {...(link.external ? { target: "_blank", rel: "noreferrer" } : {})}
+                      className="text-zinc-200 underline decoration-white/20 underline-offset-2 transition hover:decoration-white/50"
+                    >
+                      {contact.value}
+                    </a>
+                  ) : (
+                    <span className="text-zinc-300">{contact.value}</span>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
+
+      {!ready && contacts.length === 0 && supportUrl && (
         <p className="mt-3 text-xs text-zinc-600">
           Não quer esperar? Fale direto com a equipe pelo botão acima.
         </p>

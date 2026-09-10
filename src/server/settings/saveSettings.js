@@ -17,6 +17,7 @@ const ALLOWED_FIELDS = [
   "footerNote",
   "supportUrl",
   "supportLabel",
+  "supportContacts",
   "aiChain",
 ];
 
@@ -63,6 +64,23 @@ export async function saveSettings(data) {
 
   if (sanitized.supportLabel !== undefined) {
     sanitized.supportLabel = String(sanitized.supportLabel).trim().slice(0, 60);
+  }
+
+  if (sanitized.supportContacts !== undefined) {
+    if (!Array.isArray(sanitized.supportContacts)) {
+      throw createHttpError("supportContacts deve ser um array.", 400);
+    }
+    sanitized.supportContacts = sanitized.supportContacts
+      .map((contact) => ({
+        label: String(contact?.label || "")
+          .trim()
+          .slice(0, 60),
+        value: String(contact?.value || "")
+          .trim()
+          .slice(0, 200),
+      }))
+      .filter((contact) => contact.label && contact.value)
+      .slice(0, 8);
   }
 
   if (sanitized.suggestedQuestions !== undefined) {

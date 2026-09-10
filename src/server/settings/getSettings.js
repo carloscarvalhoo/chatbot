@@ -14,6 +14,10 @@ const DEFAULT_SETTINGS = {
   footerNote: "",
   supportUrl: "",
   supportLabel: "Falar com o setor responsável",
+  // Contatos oficiais mostrados ao usuário quando o LUMI não resolve.
+  // Formato: [{ label: "Secretaria Acadêmica", value: "(43) 3126-9400" }, ...]
+  // O `value` pode ser telefone, e-mail ou URL — o front detecta o tipo.
+  supportContacts: [],
   // Ordem/ativação dos modelos de IA definida no painel. Vazio = usa AI_CHAIN do ambiente.
   // Formato: [{ spec: "groq:openai/gpt-oss-120b", enabled: true }, ...]
   aiChain: [],

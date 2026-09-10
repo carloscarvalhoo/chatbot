@@ -79,6 +79,7 @@ export default function ChatWidget({ settings = {} }) {
                       onRetry={prevUser ? () => sendMessage(prevUser.text) : undefined}
                       supportUrl={settings.supportUrl}
                       supportLabel={settings.supportLabel}
+                      supportContacts={settings.supportContacts}
                     />
                   </div>
                 );
