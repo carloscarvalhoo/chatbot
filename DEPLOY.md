@@ -12,12 +12,12 @@ npm run build         # build de produção
 ## Vercel
 
 1. Importar o repo na Vercel.
-2. **Environment Variables** — copiar tudo do `.env.local`:
-   - Firebase (6 `NEXT_PUBLIC_*` + `FIREBASE_PROJECT_ID` / `FIREBASE_CLIENT_EMAIL` / `FIREBASE_PRIVATE_KEY`)
-   - `GEMINI_API_KEY`, `GEMINI_EMBEDDING_MODEL`, `GEMINI_EMBEDDING_DIMENSION`
-   - `AI_CHAIN`, `GROQ_API_KEY`, `OPENROUTER_API_KEY`
-   - `CHAT_CONTEXT_SECRET` (se a cópia usar) — **gerar novo para produção**
-   - **`CRON_SECRET`** — gerar novo: `node -e "console.log(require('crypto').randomBytes(24).toString('hex'))"`
+2. **Environment Variables** — ver a lista completa em `.env.example`. O mínimo:
+   - **Obrigatórias (10):** os 6 `NEXT_PUBLIC_FIREBASE_*` + `FIREBASE_PROJECT_ID` / `FIREBASE_CLIENT_EMAIL` / `FIREBASE_PRIVATE_KEY` + `GEMINI_API_KEY`.
+   - **Recomendadas:** `AI_CHAIN`, `GROQ_API_KEY`, `OPENROUTER_API_KEY`.
+   - **`CRON_SECRET`** — gerar um novo para produção: `node -e "console.log(require('crypto').randomBytes(24).toString('hex'))"`.
+   - **Opcional:** `PUBLIC_APP_URL` = a URL do deploy (melhora o header enviado ao OpenRouter).
+   - **NÃO colocar em produção:** `EVAL_SECRET` (só serve para o script `npm run eval` local; o código ignora esse header quando `NODE_ENV=production`).
 3. Deploy. O `vercel.json` registra o cron `/api/cron/refresh-urls`.
 
 ### Cron

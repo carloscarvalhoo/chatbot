@@ -31,10 +31,14 @@ function getClientIp(request) {
 }
 
 export async function checkChatRateLimit(request) {
-  // Bypass para a bateria de avaliação (scripts/eval-accuracy.mjs). Só funciona
-  // se EVAL_SECRET estiver definido no ambiente do servidor e o header bater.
+  // Bypass para a bateria de avaliação (scripts/eval-accuracy.mjs). Nunca vale
+  // em produção — lá o EVAL_SECRET não deve nem existir.
   const evalSecret = process.env.EVAL_SECRET;
-  if (evalSecret && request.headers.get("x-eval-secret") === evalSecret) {
+  if (
+    process.env.NODE_ENV !== "production" &&
+    evalSecret &&
+    request.headers.get("x-eval-secret") === evalSecret
+  ) {
     return;
   }
 
