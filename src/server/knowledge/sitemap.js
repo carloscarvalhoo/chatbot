@@ -1,3 +1,8 @@
+/**
+ * @file Descoberta e parsing de sitemaps (robots.txt, índices, urlset) para saber a data da última modificação de cada URL.
+ * @module server/knowledge/sitemap
+ */
+
 import { logger } from "@/server/utils/logger";
 
 const FETCH_TIMEOUT_MS = Number(process.env.SITEMAP_TIMEOUT_MS) || 12000;

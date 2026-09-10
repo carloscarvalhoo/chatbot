@@ -1,8 +1,11 @@
-// Estimativa de quando as cotas gratuitas voltam.
-// - Limite por minuto (RPM): ~1 minuto.
-// - Limite por dia (RPD): os provedores Gemini resetam à meia-noite no horário
-//   do Pacífico (US). É a referência mais conservadora; Groq/OpenRouter costumam
-//   resetar antes, então esperar até a meia-noite PT cobre todos.
+/**
+ * @file Estimativa de quando as cotas gratuitas voltam, para o contador da
+ * "fila de espera" do chat.
+ * - Limite por minuto (RPM): ~1 minuto.
+ * - Limite por dia (RPD): os modelos Gemini resetam à meia-noite no horário do
+ *   Pacífico (US). É a referência mais conservadora e cobre todos os provedores.
+ * @module server/ai/quota
+ */
 
 const ONE_MINUTE = 60_000;
 

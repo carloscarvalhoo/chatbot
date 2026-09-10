@@ -1,10 +1,14 @@
-// Classifica automaticamente um documento a partir da URL e do conteúdo,
-// sem ninguém precisar marcar nada no painel.
-//
-//  - reviewIntervalMonths: de quanto em quanto tempo esse TIPO de página
-//    deveria ser revisado (editais mudam rápido, "sobre o campus" quase nunca).
-//  - sourceDate: a data mais recente citada no conteúdo (ano de edital,
-//    "Portaria 45/2026", etc.) — usada para detectar material do ano passado.
+/**
+ * @file Classifica um documento pela URL e pelo conteúdo (tipo, intervalo de revisão, data mais recente citada) sem ninguém marcar nada no painel.
+ *
+ * Classifica automaticamente um documento a partir da URL e do conteúdo,
+ * sem ninguém precisar marcar nada no painel.
+ *  - reviewIntervalMonths: de quanto em quanto tempo esse TIPO de página
+ *    deveria ser revisado (editais mudam rápido, "sobre o campus" quase nunca).
+ *  - sourceDate: a data mais recente citada no conteúdo (ano de edital,
+ *    "Portaria 45/2026", etc.) — usada para detectar material do ano passado.
+ * @module server/knowledge/classify
+ */
 
 const MONTHS = {
   janeiro: 0,

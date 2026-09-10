@@ -1,3 +1,8 @@
+/**
+ * @file Percorre a cadeia de provedores aplicando circuit breaker, timeout, retry em erros transitórios e queda para o próximo provedor em erros definitivos. Versões streaming e não-streaming.
+ * @module server/ai/fallback
+ */
+
 import { getChain, createProviderFromSpec, buildChainFromSpecs } from "@/server/ai/chain";
 import { classifyProviderError, RETRYABLE_SAME_MODEL } from "@/server/ai/errors";
 import { estimateRetry } from "@/server/ai/quota";

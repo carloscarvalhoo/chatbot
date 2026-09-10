@@ -1,3 +1,8 @@
+/**
+ * @file Ingestão de uma página da web: raspa, deduplica por URL e persiste.
+ * @module server/knowledge/saveKnowledgeUrl
+ */
+
 import { adminDb } from "@/server/firebase/admin";
 import { splitTextIntoChunks } from "@/server/pdf/chunkText";
 import { persistKnowledgeDocument } from "@/server/knowledge/saveKnowledgeFile";

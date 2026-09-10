@@ -1,0 +1,20 @@
+{
+  "source": {
+    "include": ["src/server", "src/features", "scripts"],
+    "includePattern": ".+\\.(js|mjs)$",
+    "excludePattern": "(node_modules|docs|\\.next)"
+  },
+  "plugins": ["plugins/markdown", "node_modules/jsdoc-plugin-typescript"],
+  "typescript": {
+    "moduleRoot": "src"
+  },
+  "opts": {
+    "destination": "docs/api",
+    "recurse": true,
+    "readme": "docs/ARQUITETURA.md"
+  },
+  "templates": {
+    "cleverLinks": true,
+    "monospaceLinks": false
+  }
+}

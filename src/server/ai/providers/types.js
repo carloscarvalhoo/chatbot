@@ -1,5 +1,10 @@
-// Contrato que todo provedor de IA implementa (Google e APIs compatíveis com
-// OpenAI, como Groq, OpenRouter, Mistral e Cerebras).
+/**
+ * @file Contrato (typedefs) que todo provedor de IA implementa.
+ *
+ * Contrato que todo provedor de IA implementa (Google e APIs compatíveis com
+ * OpenAI, como Groq, OpenRouter, Mistral e Cerebras).
+ * @module server/ai/providers/types
+ */
 
 /**
  * @typedef {Object} ChatTurn

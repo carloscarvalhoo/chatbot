@@ -1,3 +1,8 @@
+/**
+ * @file Validação e sanitização da entrada da rota de chat + rate limit por IP.
+ * @module server/chat/chatGuards
+ */
+
 import { createHttpError } from "@/server/utils/errors";
 import { checkRateLimit } from "@/server/chat/rateLimitStore";
 

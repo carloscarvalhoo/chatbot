@@ -1,3 +1,8 @@
+/**
+ * @file Persiste um documento na base: classifica, fragmenta, gera embeddings, grava os chunks como vetores do Firestore e salva o texto bruto. Compartilhado por upload e reprocessamento.
+ * @module server/knowledge/saveKnowledgeFile
+ */
+
 import { FieldValue } from "firebase-admin/firestore";
 import { adminDb } from "@/server/firebase/admin";
 import {

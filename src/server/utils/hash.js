@@ -1,3 +1,8 @@
+/**
+ * @file Hash de conteúdo para detecção de mudança em páginas raspadas.
+ * @module server/utils/hash
+ */
+
 import crypto from "node:crypto";
 
 /**

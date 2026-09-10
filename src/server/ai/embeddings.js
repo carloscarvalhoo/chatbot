@@ -1,3 +1,8 @@
+/**
+ * @file Geração de embeddings com o Gemini (um a um e em lote). Marca cooldown quando a cota diária estoura.
+ * @module server/ai/embeddings
+ */
+
 import { withRetry, withTimeout } from "@/server/ai/retry";
 import { classifyProviderError, RETRYABLE_SAME_MODEL } from "@/server/ai/errors";
 import { logger } from "@/server/utils/logger";

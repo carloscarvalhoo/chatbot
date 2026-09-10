@@ -1,3 +1,8 @@
+/**
+ * @file Checagem das variáveis de ambiente obrigatórias.
+ * @module server/utils/validateEnv
+ */
+
 const REQUIRED_VARS = [
   "FIREBASE_PROJECT_ID",
   "FIREBASE_CLIENT_EMAIL",
@@ -9,6 +14,11 @@ const REQUIRED_VARS = [
 
 let validated = false;
 
+/**
+ * Lança um erro se faltar alguma variável obrigatória. Roda a checagem só uma
+ * vez por processo.
+ * @throws {Error} lista as variáveis faltantes
+ */
 export function validateEnv() {
   if (validated) return;
 

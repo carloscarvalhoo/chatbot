@@ -58,6 +58,12 @@ em [`DEPLOY.md`](./DEPLOY.md).
 | `npm run capacity` | mede limite de requisições dos modelos de IA |
 | `npm run reindex` | re-gera todos os embeddings da base |
 | `npm run dedupe` | remove documentos duplicados por URL |
+| `npm run docs` | gera a referência das funções (JSDoc) em `docs/api/` |
+
+## Documentação
+
+- [`docs/ARQUITETURA.md`](./docs/ARQUITETURA.md) — visão geral, módulos, fluxo de dados e decisões de projeto.
+- `npm run docs` gera a referência HTML das funções a partir dos comentários (`docs/api/`, não versionado).
 
 ## Estrutura
 

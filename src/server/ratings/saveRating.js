@@ -1,3 +1,8 @@
+/**
+ * @file Salva o 👍 / 👎 que o usuário deu numa resposta.
+ * @module server/ratings/saveRating
+ */
+
 import { adminDb } from "@/server/firebase/admin";
 import { createHttpError } from "@/server/utils/errors";
 

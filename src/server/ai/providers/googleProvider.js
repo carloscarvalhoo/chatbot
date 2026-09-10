@@ -1,3 +1,8 @@
+/**
+ * @file Provedor do Google Gemini (SDK oficial), com simulação de system prompt e streaming.
+ * @module server/ai/providers/googleProvider
+ */
+
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const API_KEY = process.env.GEMINI_API_KEY?.trim();

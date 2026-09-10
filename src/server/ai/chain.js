@@ -1,3 +1,8 @@
+/**
+ * @file Registro de provedores de IA e montagem da cadeia de fallback a partir de specs "provedor:modelo".
+ * @module server/ai/chain
+ */
+
 import { createGoogleProvider } from "@/server/ai/providers/googleProvider";
 import {
   createOpenAICompatibleProvider,

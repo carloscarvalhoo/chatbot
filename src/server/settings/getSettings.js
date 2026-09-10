@@ -1,3 +1,8 @@
+/**
+ * @file Lê a configuração institucional do Firestore (nome, mensagens, ordem dos modelos, contatos de suporte) com cache de 5 minutos.
+ * @module server/settings/getSettings
+ */
+
 import { adminDb } from "@/server/firebase/admin";
 
 const DEFAULT_SETTINGS = {

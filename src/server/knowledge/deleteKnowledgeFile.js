@@ -1,3 +1,8 @@
+/**
+ * @file Apaga um documento da base e tudo que é dele (chunks, texto bruto).
+ * @module server/knowledge/deleteKnowledgeFile
+ */
+
 import { adminDb } from "@/server/firebase/admin";
 import { commitInBatches } from "@/server/firebase/commitInBatches";
 import { createHttpError } from "@/server/utils/errors";

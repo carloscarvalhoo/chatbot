@@ -1,3 +1,8 @@
+/**
+ * @file Cron de atualização: para cada documento de URL, decide se mudou (sitemap lastmod -> GET condicional -> hash) e reprocessa só o que mudou.
+ * @module server/knowledge/refreshUrls
+ */
+
 import { adminDb } from "@/server/firebase/admin";
 import { scrapePage } from "@/server/knowledge/scrapePage";
 import { splitTextIntoChunks } from "@/server/pdf/chunkText";

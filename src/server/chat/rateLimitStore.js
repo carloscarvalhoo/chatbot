@@ -1,3 +1,8 @@
+/**
+ * @file Rate limit híbrido: contador em memória por instância + Firestore quando o IP se aproxima do limite.
+ * @module server/chat/rateLimitStore
+ */
+
 import { FieldValue } from "firebase-admin/firestore";
 import { adminDb } from "@/server/firebase/admin";
 import { logger } from "@/server/utils/logger";

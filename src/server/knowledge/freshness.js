@@ -1,4 +1,9 @@
-// Cálculo puro do estado de frescor de um documento — sem I/O, testável.
+/**
+ * @file Cálculo puro do frescor de um documento (em dia / revisar / vencido) e hash de conteúdo. Sem I/O, testável.
+ *
+ * Cálculo puro do estado de frescor de um documento — sem I/O, testável.
+ * @module server/knowledge/freshness
+ */
 
 const DEFAULT_REVIEW_INTERVAL_MONTHS = Number(process.env.REVIEW_INTERVAL_MONTHS) || 12;
 

@@ -1,3 +1,8 @@
+/**
+ * @file Montagem dos prompts do sistema (chat, resumo de memória, sugestões de perguntas), incluindo as regras de segurança e de aderência à base.
+ * @module server/ai/prompts
+ */
+
 export function getSystemPrompt(
   longMemoryText,
   knowledgeContext = "",

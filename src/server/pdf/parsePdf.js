@@ -1,3 +1,8 @@
+/**
+ * @file Extração de texto de PDF.
+ * @module server/pdf/parsePdf
+ */
+
 import { createRequire } from "node:module";
 import { normalizeText } from "@/server/pdf/chunkText";
 

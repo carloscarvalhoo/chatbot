@@ -1,3 +1,8 @@
+/**
+ * @file Valida e grava a configuração institucional, e invalida o cache.
+ * @module server/settings/saveSettings
+ */
+
 import { adminDb } from "@/server/firebase/admin";
 import { createHttpError } from "@/server/utils/errors";
 import { invalidateSettingsCache } from "@/server/settings/getSettings";

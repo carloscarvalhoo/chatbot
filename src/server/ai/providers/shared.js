@@ -1,4 +1,9 @@
-// Helpers comuns aos provedores baseados em fetch (APIs compatíveis com OpenAI).
+/**
+ * @file Helpers comuns aos provedores baseados em fetch: conversão de histórico, fetch com timeout e ponte de SSE para async generator.
+ *
+ * Helpers comuns aos provedores baseados em fetch (APIs compatíveis com OpenAI).
+ * @module server/ai/providers/shared
+ */
 
 /**
  * Histórico interno ({role:"user"|"model", text}) → formato de chat padrão

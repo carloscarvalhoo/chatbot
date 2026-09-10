@@ -1,3 +1,8 @@
+/**
+ * @file Lista os documentos da base para o painel, já com o estado de frescor e datas serializadas.
+ * @module server/knowledge/listKnowledgeFiles
+ */
+
 import { adminDb } from "@/server/firebase/admin";
 import { computeFreshness } from "@/server/knowledge/knowledgeMeta";
 

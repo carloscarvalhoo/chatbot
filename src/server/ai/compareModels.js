@@ -1,3 +1,8 @@
+/**
+ * @file Roda a mesma pergunta em vários modelos em paralelo, para o comparador do painel.
+ * @module server/ai/compareModels
+ */
+
 import { getChainInfo, createProviderFromSpec } from "@/server/ai/chain";
 import { withTimeout } from "@/server/ai/retry";
 import { classifyProviderError } from "@/server/ai/errors";

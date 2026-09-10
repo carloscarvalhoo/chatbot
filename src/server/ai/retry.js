@@ -1,4 +1,8 @@
-// Utilitários de resiliência: timeout e retry com backoff exponencial.
+/**
+ * @file Utilitários de resiliência: timeout por tentativa e retry com backoff
+ * exponencial.
+ * @module server/ai/retry
+ */
 
 /**
  * Corre `promise` contra um timeout. Se estourar, rejeita com um erro AbortError.

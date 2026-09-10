@@ -1,9 +1,13 @@
-// Circuit breaker simples, em memória do processo.
-//
-// LIMITAÇÃO CONHECIDA: em ambiente serverless (Vercel) cada instância tem o seu
-// próprio estado e ele zera em cold start. Serve para poupar latência dentro de
-// uma mesma instância "quente". A versão compartilhada (Firestore) fica para a
-// Fase 4 do plano — ver REVISAO-ARQUITETURA.md.
+/**
+ * @file Circuit breaker simples, em memória do processo. Quando um modelo
+ * estoura a cota, "abre" por alguns minutos para não perder tempo tentando de
+ * novo.
+ *
+ * LIMITAÇÃO CONHECIDA: em ambiente serverless (Vercel) cada instância tem o seu
+ * próprio estado e ele zera em cold start. Serve para poupar latência dentro de
+ * uma mesma instância "quente".
+ * @module server/ai/circuitBreaker
+ */
 
 const openUntil = new Map();
 

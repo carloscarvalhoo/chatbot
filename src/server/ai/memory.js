@@ -1,3 +1,8 @@
+/**
+ * @file Memória da conversa: mantém um buffer curto de mensagens e resume o excedente num texto de "memória longa".
+ * @module server/ai/memory
+ */
+
 import { generateTextWithFallback } from "@/server/ai/fallback";
 import { getMemorySummaryPrompt } from "@/server/ai/prompts";
 

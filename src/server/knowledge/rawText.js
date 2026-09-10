@@ -1,3 +1,8 @@
+/**
+ * @file Guarda o texto extraído de cada documento em pedaços numa subcoleção, para permitir reprocessar sem re-upload.
+ * @module server/knowledge/rawText
+ */
+
 import { adminDb } from "@/server/firebase/admin";
 import { commitInBatches } from "@/server/firebase/commitInBatches";
 

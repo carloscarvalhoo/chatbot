@@ -1,4 +1,8 @@
-// Classificação de erros de provedores de IA para decidir a estratégia de fallback.
+/**
+ * @file Classificação de erros de provedores de IA (quota, sobrecarga,
+ * timeout, ...) para decidir se vale retry no mesmo modelo ou pular pro próximo.
+ * @module server/ai/errors
+ */
 
 /**
  * @typedef {"quota"|"overloaded"|"server"|"not_found"|"auth"|"timeout"|"content_filter"|"unknown"} ProviderErrorKind

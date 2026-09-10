@@ -1,3 +1,8 @@
+/**
+ * @file Orquestra uma resposta do chat: busca na base + settings + monta o prompt + chama a cadeia de modelos (com e sem streaming) + atualiza a memória da conversa.
+ * @module server/ai/aiService
+ */
+
 import {
   formatKnowledgeContext,
   getSourcesWithFreshness,

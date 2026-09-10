@@ -1,5 +1,23 @@
+/**
+ * @file Aplica muitas escritas no Firestore respeitando o limite de 500
+ * operações por batch (usamos 50 por segurança).
+ * @module server/firebase/commitInBatches
+ */
+
 import { adminDb } from "@/server/firebase/admin";
 
+/**
+ * @typedef {Object} WriteOperation
+ * @property {"set"|"delete"} type
+ * @property {FirebaseFirestore.DocumentReference} ref
+ * @property {object} [data]  obrigatório quando type === "set"
+ */
+
+/**
+ * @param {WriteOperation[]} writeOperations
+ * @param {number} [maxWritesPerBatch=50]
+ * @returns {Promise<void>}
+ */
 export async function commitInBatches(writeOperations, maxWritesPerBatch = 50) {
   for (let i = 0; i < writeOperations.length; i += maxWritesPerBatch) {
     const batch = adminDb.batch();

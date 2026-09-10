@@ -1,5 +1,11 @@
-// Tamanho do bloco em caracteres. Blocos menores = recuperação mais precisa e
-// menos ruído no contexto, ao custo de mais chunks (mais embeddings, mais docs).
+/**
+ * @file Normalização de texto e divisão em blocos (chunks) com sobreposição.
+ *
+ * Tamanho do bloco em caracteres. Blocos menores = recuperação mais precisa e
+ * menos ruído no contexto, ao custo de mais chunks (mais embeddings, mais docs).
+ * @module server/pdf/chunkText
+ */
+
 export const DEFAULT_CHUNK_SIZE = Number(process.env.CHUNK_SIZE) || 500;
 export const DEFAULT_CHUNK_OVERLAP = Number(process.env.CHUNK_OVERLAP) || 80;
 

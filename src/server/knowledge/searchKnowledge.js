@@ -1,3 +1,8 @@
+/**
+ * @file Busca na base de conhecimento: vetorial nativa do Firestore (findNearest) com queda para varredura + cosseno / palavra-chave em memória. Também monta a lista de fontes com frescor.
+ * @module server/knowledge/searchKnowledge
+ */
+
 import { adminDb } from "@/server/firebase/admin";
 import {
   generateEmbedding,
@@ -340,7 +345,8 @@ export async function searchKnowledgeChunks(
 
 /**
  * Lista de fontes únicas dos chunks recuperados, para exibir ao usuário.
- * @returns {{ name: string, url: string|null, updatedAt: string|null }[]}
+ * @param {object[]} [chunks]
+ * @returns {Array<{name: string, url: (string|null), updatedAt: (string|null)}>}
  */
 export function buildSources(chunks = []) {
   const seen = new Map();

@@ -1,3 +1,8 @@
+/**
+ * @file Operações de metadados de documentos: marcar como revisado, definir validade. Re-exporta computeFreshness.
+ * @module server/knowledge/knowledgeMeta
+ */
+
 import { adminDb } from "@/server/firebase/admin";
 import { createHttpError } from "@/server/utils/errors";
 import { computeFreshness, DEFAULT_REVIEW_INTERVAL_MONTHS } from "@/server/knowledge/freshness";

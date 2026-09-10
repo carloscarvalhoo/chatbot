@@ -1,3 +1,8 @@
+/**
+ * @file Re-fragmenta e re-embeda um documento (ou todos) com os parâmetros atuais.
+ * @module server/knowledge/reprocessKnowledgeFile
+ */
+
 import { adminDb } from "@/server/firebase/admin";
 import { splitTextIntoChunks } from "@/server/pdf/chunkText";
 import { persistKnowledgeDocument } from "@/server/knowledge/saveKnowledgeFile";

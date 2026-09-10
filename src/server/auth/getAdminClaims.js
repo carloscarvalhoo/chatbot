@@ -1,12 +1,17 @@
+/**
+ * @file Lê as claims do admin logado (uid, email) — para rotas que precisam
+ * saber QUEM é o admin, não só se ele está autenticado.
+ * @module server/auth/getAdminClaims
+ */
+
 import { cookies } from "next/headers";
 import { adminAuth } from "@/server/firebase/admin";
 
 const ADMIN_COOKIE_NAME = "firebase_admin_session";
 
 /**
- * Devolve as claims do admin logado ({ uid, email, ... }) ou null.
- * Diferente de checkAdminAccess (que devolve uma Response de erro), este
- * é pra quando a rota precisa saber QUEM é o admin.
+ * @returns {Promise<import("firebase-admin/auth").DecodedIdToken | null>}
+ *   as claims (`uid`, `email`, ...) ou `null` se não houver sessão válida.
  */
 export async function getAdminClaims() {
   const cookieStore = await cookies();

@@ -1,3 +1,8 @@
+/**
+ * @file Provedor genérico para APIs no formato OpenAI /chat/completions (Groq, OpenRouter, Mistral, Cerebras). Presets por provedor; chave sempre do ambiente.
+ * @module server/ai/providers/openaiCompatibleProvider
+ */
+
 import { toAssistantStyleMessages, fetchJson, streamViaSse } from "@/server/ai/providers/shared";
 
 // Presets para provedores com API no formato OpenAI /chat/completions.

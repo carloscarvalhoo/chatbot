@@ -1,3 +1,8 @@
+/**
+ * @file Baixa e limpa o texto de uma página HTML, com timeout, limite de tamanho e suporte a GET condicional (ETag / If-Modified-Since).
+ * @module server/knowledge/scrapePage
+ */
+
 import * as cheerio from "cheerio";
 import { logger } from "@/server/utils/logger";
 
@@ -10,14 +15,12 @@ const USER_AGENT =
  * Baixa e limpa o texto de uma página.
  *
  * @param {string} url
- * @param {{ etag?: string, lastModified?: string }} [conditional]
- *   Se informado, envia If-None-Match / If-Modified-Since. Resposta 304 →
- *   retorna `{ notModified: true }` sem baixar o corpo.
- * @returns {Promise<
- *   | null
- *   | { notModified: true }
- *   | { title: string, text: string, etag: string|null, lastModified: string|null }
- * >}
+ * @param {object} [conditional] Se informado, envia If-None-Match /
+ *   If-Modified-Since. Uma resposta 304 devolve `{ notModified: true }` sem
+ *   baixar o corpo.
+ * @param {string} [conditional.etag]
+ * @param {string} [conditional.lastModified]
+ * @returns {Promise<null | {notModified: true} | {title: string, text: string, etag: (string|null), lastModified: (string|null)}>}
  */
 export async function scrapePage(url, conditional = {}) {
   const controller = new AbortController();

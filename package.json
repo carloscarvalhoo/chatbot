@@ -11,6 +11,7 @@
     "format:check": "prettier --check \"src/**/*.{js,jsx}\" \"scripts/**/*.mjs\" \"test/**/*.js\"",
     "test": "vitest run",
     "test:watch": "vitest",
+    "docs": "jsdoc -c jsdoc.json",
     "capacity": "node --env-file=.env.local scripts/model-capacity-test.mjs",
     "eval": "node --env-file=.env.local scripts/eval-accuracy.mjs",
     "reindex": "node --env-file=.env.local scripts/reindex.mjs",
@@ -45,6 +46,8 @@
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "eslint-config-prettier": "^10.1.8",
+    "jsdoc": "^4.0.5",
+    "jsdoc-plugin-typescript": "^3.2.1",
     "prettier": "^3.9.6",
     "tailwindcss": "^4",
     "vitest": "^5.0.0"
