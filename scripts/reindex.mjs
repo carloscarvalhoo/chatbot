@@ -28,7 +28,20 @@ const DIMENSION = Number(process.env.GEMINI_EMBEDDING_DIMENSION) || 768;
 const EMB_MODEL = process.env.GEMINI_EMBEDDING_MODEL || "gemini-embedding-001";
 const CHUNK_SIZE = Number(process.env.CHUNK_SIZE) || 500;
 const CHUNK_OVERLAP = Number(process.env.CHUNK_OVERLAP) || 80;
-const API_KEY = process.env.GEMINI_API_KEY?.trim();
+// Aceita várias chaves (GEMINI_API_KEYS separadas por vírgula, ou GEMINI_API_KEY
+// sozinha). Todas com o mesmo modelo → mesmo espaço vetorial. Ao estourar a cota
+// de uma (429), passa pra próxima — dá pra reindexar a base inteira num dia só.
+const API_KEYS = (() => {
+  const list = (process.env.GEMINI_API_KEYS || "")
+    .split(",")
+    .map((k) => k.trim())
+    .filter(Boolean);
+  const single = process.env.GEMINI_API_KEY?.trim();
+  if (single && !list.includes(single)) list.unshift(single);
+  return list;
+})();
+let keyIdx = 0;
+const API_KEY = API_KEYS[0];
 
 initializeApp({
   credential: cert({
@@ -92,7 +105,7 @@ async function embedBatch(texts) {
         `https://generativelanguage.googleapis.com/v1beta/models/${EMB_MODEL}:batchEmbedContents`,
         {
           method: "POST",
-          headers: { "Content-Type": "application/json", "x-goog-api-key": API_KEY },
+          headers: { "Content-Type": "application/json", "x-goog-api-key": API_KEYS[keyIdx] },
           body: JSON.stringify({
             requests: slice.map((t) => ({
               model: `models/${EMB_MODEL}`,
@@ -107,6 +120,11 @@ async function embedBatch(texts) {
       if (res.ok) {
         for (const e of data.embeddings) out.push(e.values);
         break;
+      }
+      if (res.status === 429 && keyIdx < API_KEYS.length - 1) {
+        keyIdx++;
+        process.stdout.write(`\n    chave ${keyIdx} esgotada, indo pra chave ${keyIdx + 1}\n`);
+        continue;
       }
       if ((res.status === 429 || res.status === 503) && attempt++ < 4) {
         await new Promise((r) => setTimeout(r, 1000 * 2 ** attempt));

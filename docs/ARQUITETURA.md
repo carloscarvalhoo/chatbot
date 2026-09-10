@@ -122,9 +122,11 @@ streaming, a troca de provedor só acontece **antes do primeiro token**.
 4. A rota devolve NDJSON (uma linha JSON por evento); o cliente monta a bolha.
 5. `updateMemoryIfNeeded` resume o histórico se ele ficou grande.
 
-**Custo por pergunta:** ~10-13 leituras no Firestore (8 do `findNearest` + o
+**Custo por pergunta:** ~14-17 leituras no Firestore (12 do `findNearest` + o
 `getAll` das fontes) e 1 requisição de embedding. Com o plano Spark isso dá um
-teto de ~1000 perguntas/dia (o embedding é o gargalo: 1000 RPD grátis).
+teto de ~1000 perguntas/dia por chave de embedding (o embedding é o gargalo:
+1000 RPD grátis). Configurar `GEMINI_API_KEYS` com mais de uma chave multiplica
+esse teto — todas usam o mesmo modelo, então o índice continua válido.
 
 ### Cadastrar um site
 
