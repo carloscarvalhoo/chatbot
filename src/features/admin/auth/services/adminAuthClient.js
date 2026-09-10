@@ -1,5 +1,5 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "@/services/firebase/client";
+import { getFirebaseAuth } from "@/services/firebase/client";
 
 function getFriendlyFirebaseError(error) {
   const code = error?.code || "";
@@ -30,7 +30,7 @@ function getFriendlyFirebaseError(error) {
 
 export async function loginAdminWithFirebase({ email, password }) {
   try {
-    const credential = await signInWithEmailAndPassword(auth, email.trim(), password);
+    const credential = await signInWithEmailAndPassword(getFirebaseAuth(), email.trim(), password);
 
     const idToken = await credential.user.getIdToken();
 
